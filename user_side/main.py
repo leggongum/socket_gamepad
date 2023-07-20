@@ -32,7 +32,7 @@ def send_to_server(key, pressed):
     if key_value not in KEYS:
         return
 
-    data = f'{1 if key_value in "wasd" else 0} {pressed} {KEYS[key_value]}'
+    data = f'{1 if key_value in "wasd" else 2 if key_value in "ijkl" else 0} {pressed} {KEYS[key_value]}'
     client_socket.sendto(data.encode(), to_server)
     data, addr = client_socket.recvfrom(1024)
     #print(data)
