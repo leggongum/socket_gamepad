@@ -32,6 +32,7 @@ class Gamepad_user:
     def __init__(self, addr: tuple) -> None:
         self.gamepad = vg.VX360Gamepad()
         self.joystick = {'w': 0.0, 'a': 0.0, 's': 0.0, 'd': 0.0}
+        self.r_joystick = {'i': 0.0, 'j': 0.0, 'k': 0.0, 'l': 0.0}
         Gamepad_user.users_dict[addr[0]] = self
         print('new user: {}'.format(addr))
 
@@ -47,7 +48,14 @@ class Gamepad_user:
 
         is_joystick = int(data[0])
         is_press = int(data[1])
-        if is_joystick:     #if joystick
+        if is_joystick == 2: #if right joistick
+            if is_press: #if press
+                self.joystick[data[2]] = 1.0
+            else:       #if release
+                self.joystick[data[2]] -= 1.0
+            self.gamepad.left_joystick_float(x_value_float=self.joystick['l']-self.joystick['j'], y_value_float=self.joystick['i']-self.joystick['k'])
+
+        elif is_joystick:     #if left joystick
             if is_press: #if press
                 self.joystick[data[2]] = 1.0
             else:       #if release
