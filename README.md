@@ -13,10 +13,10 @@ To install virtual enviroment you need (for server_side and user_side):
 
 server_side: 
 Download this directory on computer with Windows. Socket_gamepads will be connected to this computer.
-Install virtual enviroment. Then command 'python main.py' will start server
+Install virtual enviroment. Then command 'venv\Scripts\python main.py' will start server
 
 
 user_side:
 Download this directory on computer (OS may be different). This computer will connect to computer with started server.
-Install virtual enviroment. Then command 'python main.py' will start connect to server.
+Install virtual enviroment. Then command 'venv\Scripts\python main.py' (or 'venv/bin/python main.py' for Linux) will start connect to server.
 In file 'settings.json' you can change server ip, server port, keys from keyboard -> gamepad action.
