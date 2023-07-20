@@ -52,11 +52,10 @@ def on_release(key):
 
 if __name__ == '__main__':
     m_listener = mouse.Listener(on_click=on_click)
-    k_listener = keyboard.Listener(on_press=on_press,on_release=on_release,suppress=True)
-
-    k_listener.start()
     m_listener.start()
-    
-    while True:
-        pass
+    with keyboard.Listener(
+        on_press=on_press,
+        on_release=on_release,
+        suppress=True) as listener:
+        listener.join()
     client_socket.close()
