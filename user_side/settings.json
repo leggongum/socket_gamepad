@@ -1,0 +1,25 @@
+{
+    "ip": "127.0.0.1",
+    "port": 5005,
+    "keys": {
+        "w": "w",
+        "a": "a",
+        "s": "s",
+        "d": "d",
+        "y": "DPAD_UP",
+        "h": "DPAD_DOWN",
+        "g": "DPAD_LEFT",
+        "j": "DPAD_RIGHT",
+        "enter": "START",
+        "esc": "BACK",
+        "": "LEFT_THUMB",
+        "": "RIGHT_THUMB",
+        "": "LEFT_SHOULDER",
+        "tab": "RIGHT_SHOULDER",
+        "": "GUIDE",
+        "space": "A",
+        "button.left": "B",
+        "button.right": "X",
+        "n": "Y"
+    }
+}
